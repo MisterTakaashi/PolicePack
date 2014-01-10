@@ -21,9 +21,9 @@ end
 ---------------------------------------------------------------------------|
 SWEP.Author   	    	= "Buzzofwar"
 SWEP.Contact        	= "Buzzofwar"
-SWEP.PrintName			= "Handcuffs"
-SWEP.Purpose        	= "To make it difficult for others to run away"
-SWEP.Instructions   	= "Left click to put cuffs on. Right click to take take cuffs off."
+SWEP.PrintName			= "Menottes"
+SWEP.Purpose        	= "Mettez les criminels en deroute"
+SWEP.Instructions   	= "Clic gauche pour mettre les menottes. Clic droit pour les enlever."
 SWEP.Spawnable      	= true
 SWEP.AdminSpawnable 	= true
 SWEP.HoldType 			= "none"  
@@ -108,8 +108,8 @@ function SWEP:PrimaryAttack()
 		if( tr.Entity:GetNWBool( "FrozenYay" ) == true ) then
 			return; end
 		tr.Entity:SetNWBool( "FrozenYay", true )
-		self.Owner:PrintMessage(HUD_PRINTCENTER,"Player Has Been Handcuffed.");
-		tr.Entity:PrintMessage(HUD_PRINTCENTER,"You Have Been Handcuffed.");
+		self.Owner:PrintMessage(HUD_PRINTCENTER,"Le malfaiteur a été menotté.");
+		tr.Entity:PrintMessage(HUD_PRINTCENTER,"Vous avez été menotté.");
 		
 		tr.Entity:SetWalkSpeed(20)
 		tr.Entity:SetRunSpeed(20)
@@ -135,8 +135,8 @@ function SWEP:SecondaryAttack()
 			tr.Entity:SetRunSpeed(240)
 
 		else
-			self.Owner:PrintMessage( HUD_PRINTCENTER, "Player isn't handcuffed." );
-			tr.Entity:PrintMessage(HUD_PRINTCENTER,"You Have Been Released.");
+			self.Owner:PrintMessage( HUD_PRINTCENTER, "Cette personne n'est pas menottée." );
+			tr.Entity:PrintMessage(HUD_PRINTCENTER,"Vous avez été relaché.");
 		end
 	end
 end
